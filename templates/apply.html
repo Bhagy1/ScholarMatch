@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply Scholarship</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            padding: 6px;
+            width: 250px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .sch-box {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Apply for {{ scholarship['name'] }}</h1>
+
+<p><strong>Provider:</strong> {{ scholarship['provider'] }}</p>
+<p><strong>Category:</strong> {{ scholarship['eligibility'] }}</p>
+<p><strong>Minimum Marks Required:</strong> {{ scholarship['minmarks'] }}</p>
+<p><strong>Income Limit:</strong> {{ scholarship['income'] }}</p>
+<p><strong>Region:</strong> {{ scholarship['region'] }}</p>
+<p><strong>Amount:</strong> {{ scholarship['amount'] }}</p>
+<p><strong>Notes:</strong> {{ scholarship['notes'] }}</p>
+
+
+<hr>
+
+<h2>Application Form</h2>
+
+<form method="POST">
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <button type="submit">Submit Application</button>
+</form>
+
+</body>
+</html>

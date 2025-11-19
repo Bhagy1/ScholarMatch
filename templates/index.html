@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholarship Recommendation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Scholarship Recommendation System</h1>
+
+<h2>Find the Best Scholarships for You</h2>
+
+<form action="/recommend" method="POST">
+    <label>Percentage:</label>
+    <input type="number" name="percentage" required>
+
+    <label>Family Income (₹):</label>
+    <input type="number" name="income" required>
+
+    <label>Category:</label>
+    <select name="category">
+        <option>General</option>
+        <option>OBC</option>
+        <option>SC</option>
+        <option>ST</option>
+    </select>
+
+    <label>Gender:</label>
+    <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+    <button type="submit">Get Recommendations</button>
+</form>
+
+
+</body>
+</html>

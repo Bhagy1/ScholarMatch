@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Scholarships</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Your Recommended Scholarships</h1>
+
+{% if rec|length == 0 %}
+    <p>No scholarships match your profile.</p>
+{% else %}
+    <ul>
+        {% for sch in rec %}
+            <li>
+                <strong>{{ sch['name'] }}</strong><br>
+
+                <small>
+                    Provider: {{ sch['provider'] }} |
+                    Eligibility: {{ sch['eligibility'] }} |
+                    Amount: ₹{{ sch['amount'] }}
+                </small>
+                <br><br>
+
+                <a href="/apply/{{ sch['id'] }}" class="btn">Apply Now</a>
+
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<a href="/">Back</a>
+
+</body>
+</html>
